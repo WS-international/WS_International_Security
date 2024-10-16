@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="es" data-bs-theme="auto">
+
+<head>
+    <script src="../assets/js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>WS Security International </title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <style>
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 10vw;
+        }
+
+        /* Añade más separación entre los botones y el contenido */
+        .carousel-control-prev {
+            left: -7vw;
+            /* Mueve el botón hacia la izquierda */
+        }
+
+        .carousel-control-next {
+            right: -7vw;
+            /* Mueve el botón hacia la derecha */
+        }
+
+        .circle-img {
+            width: 15vw;
+            height: 15vw;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .circle-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+
+        .carousel-item img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.815);
+            filter: grayscale(0%);
+        }
+
+        .bg-dark {
+            background-image: url("Imagen del Banner") !important;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+            <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+                <use href="#circle-half"></use>
+            </svg>
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#sun-fill"></use>
+                    </svg>
+                    Light
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#moon-stars-fill"></use>
+                    </svg>
+                    Dark
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+                    aria-pressed="true">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#circle-half"></use>
+                    </svg>
+                    Auto
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+
+    <header data-bs-theme="dark">
+        <div class="collapse text-bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-11 col-md-9 py-4">
+                        <h4 class="text-center">¡Sobre Nosotros!</h4>
+                        <p class="text-body-secondary text-justify">
+                            En WS Security International, somos líderes en servicios de seguridad y transporte elite,
+                            ofreciendo soluciones personalizadas tanto a nivel nacional como internacional. Nuestro
+                            compromiso es garantizar la máxima protección y comodidad a nuestros clientes, utilizando
+                            camionetas blindadas y convencionales de último modelo, adaptadas a sus necesidades
+                            específicas.
+                            <br>
+                            Con una amplia experiencia en el manejo de la seguridad de artistas de talla mundial y
+                            personalidades reconocidas, entendemos las exigencias y expectativas de quienes requieren un
+                            servicio de alta calidad. Nos especializamos en atender a personas con perfil de alto riesgo
+                            y aquellos que simplemente desean viajar con tranquilidad y exclusividad. En WS Security
+                            International, su seguridad es nuestra prioridad.
+                        </p>
+                    </div>
+                    <div class="col-sm-2 offset-md-1 py-4 text-justify">
+                        <h4>Contactanos</h4>
+                        <ul class="list-unstyled ">
+                            <li><a href="https://www.instagram.com/wssecurityinternational/" class="text-white"
+                                    target="_blank" style="text-decoration: none;"><i class="bi bi-instagram"></i>
+                                    Instagram</a></li>
+                            <li><a href="https://youtube.com/@wsinternationalsecurity?si=e8E4pzt-hPPMFrVU"
+                                    class="text-white" target="_blank" style="text-decoration: none;"><i
+                                        class="bi bi-youtube"></i> Youtube</a></li>
+                            <li><a href="https://wa.link/fysy0o" class="text-white" target="_blank"
+                                    style="text-decoration: none;"><i class="bi bi-whatsapp"></i> WhatsApp</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img src="https://willysecurity.com/wp-content/uploads/thegem-logos/logo_d60aff3286ed004d83cddf64819fef76_1x.png"
+                        alt="willysecurity" style="height: 150px;  width: 150px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <section class="py-5 px-3">
+            <div class="row py-lg-5">
+                <div class="col-lg-16 col-md-8 mx-auto">
+                    <h1 class="fw-dark text-center">WS International Security</h1>
+                    <p class="lead text-body-secondary">
+                        Nos complace darle la bienvenida a WS International Security, donde la seguridad de su bienestar
+                        es nuestra máxima prioridad. Con años de experiencia en el sector, somos líderes en ofrecer
+                        soluciones de
+                        seguridad integral que se adaptan a las necesidades específicas de cada cliente. Le invitamos a
+                        explorar nuestros servicios y descubrir cómo WS International Security puede
+                        ayudarle a crear un entorno seguro y protegido.
+                    </p>
+                    <p class="lead text-body-secondary text-center">
+                        Gracias por confiar en nosotros. Su seguridad es nuestra misión.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vehiculos -->
+        <section class="container">
+            <div class="card text-bg-dark mb-2">
+                <img src="https://willysecurity.com/wp-content/uploads/2023/05/cars-WillySecurity.png"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Nuestros Vehiculos</h5>
+                    <p class="card-text py-2 px-3">
+                        En WS International Security disponemos de una amplia flota de vehículos blindados y
+                        convencionales para
+                        realizar todo tipo de desplazamientos en Colombia, Estados Unidos y todo Latinoamérica.
+                        Contamos con personal altamente calificado que te brindarán la mejor experiencia
+                        mientras
+                        llegas a donde lo necesitas.
+                    </p>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#ModalVehicles">
+                            Vehiculos disponibles
+                        </button>
+
+
+                        <div class="modal fade" id="ModalVehicles" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="carouselExampleInterval" class="carousel slide"
+                                            data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active" data-bs-interval="10000">
+                                                    <img src="https://assets.static-gm.com/Assets/cc0f2490-9e46-41eb-86f2-1f581d7a84b7/6bdc1f3b-82e6-46d7-9cec-fe9620e11ef2/v-1621401078/Desktop.webp"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="https://www.chevrolet.com.co/bypass/gmccontenthub/chevrolet/gm-co/colorizer_tahoe/images/colorizer/2022-tahoe-z71-colorizer-01-fi.png"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="https://www.cadillac.com/content/dam/cadillac/na/us/english/index/vehicles/2024/crossover-suvs/escalade/01-images/my24-escalade-mov-packages-onyx-v2.jpg?imwidth=960"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item active" data-bs-interval="2000">
+                                                    <img src="https://assets.static-gm.com/Assets/cc0f2490-9e46-41eb-86f2-1f581d7a84b7/6bdc1f3b-82e6-46d7-9cec-fe9620e11ef2/v-1621401078/Desktop.webp"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="https://www.chevrolet.com.co/bypass/gmccontenthub/chevrolet/gm-co/colorizer_tahoe/images/colorizer/2022-tahoe-z71-colorizer-01-fi.png"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="https://www.cadillac.com/content/dam/cadillac/na/us/english/index/vehicles/2024/crossover-suvs/escalade/01-images/my24-escalade-mov-packages-onyx-v2.jpg?imwidth=960"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button"
+                                                data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button"
+                                                data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+        <!-- Artistas y Famosos -->
+        <section style="background-color: rgb(51, 50, 50);" class="py-4">
+            <h2 class="text-center text-white py-3 fw-bold fst-italic">Artistas</h2>
+            <div>
+                <div id="carouselExample" class="carousel slide container py-5" data-bs-ride="carousel">
+                    <div class="carousel-inner text-white">
+                        <div class="carousel-item active">
+                            <div class="row text-center">
+                                <div class="col-lg-3">
+                                    <img class="circle-img"
+                                        src="https://cdn.justjared.com/wp-content/uploads/2021/05/karol-g-bbma/karol-g-billboard-music-awards-may-2021-08.jpg"
+                                        alt="...">
+                                    <h5>Karol G</h5>
+                                    <p>Some representative placeholder content for the first column.</p>
+                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                        data-bs-target="#ModalArtista1">Ver Más</button>
+                                    <br>
+                                    <div class="modal fade" id="ModalArtista1" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                                            <div class="modal-content bg-dark ">
+                                                <div class="modal-header">
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <img src="https://cdn.justjared.com/wp-content/uploads/2021/05/karol-g-bbma/karol-g-billboard-music-awards-may-2021-08.jpg"
+                                                        class="" style="width: 10vw; height: 10vw;" alt="...">
+                                                    <p>Se realiza un acompañamiento exhaustivo a la artista Lorem
+                                                        ipsum
+                                                        dolor, sit amet consectetur adipisicing elit. Necessitatibus
+                                                        ullam voluptas asperiores quam labore fuga, molestiae
+                                                        consequuntur blanditiis ducimus dicta provident amet odit
+                                                        eius
+                                                        ut impedit enim eos eaque. Quas.</p>
+                                                    <img src="https://cdn.justjared.com/wp-content/uploads/2021/05/karol-g-bbma/karol-g-billboard-music-awards-may-2021-08.jpg"
+                                                        class="" style="width: 10vw; height: 10vw;" alt="...">
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Cerrar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <img src="https://via.placeholder.com/150" class="circle-img" alt="...">
+                                    <h5>Heading 2</h5>
+                                    <p>Some representative placeholder content for the second column.</p>
+                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                        data-bs-target="#ModalArtista2">Ver Más</button>
+                                    <br>
+                                </div>
+                                <div class="col-lg-3">
+                                    <img src="https://via.placeholder.com/150" class="circle-img" alt="...">
+                                    <h5>Heading 3</h5>
+                                    <p>Some representative placeholder content for the third column.</p>
+                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                        data-bs-target="#ModalArtista3">Ver Más</button>
+                                    <br>
+                                </div>
+                                <div class="col-lg-3">
+                                    <img src="https://via.placeholder.com/150" class="circle-img" alt="...">
+                                    <h5>Heading 4</h5>
+                                    <p>Some representative placeholder content for the fourth column.</p>
+                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                        data-bs-target="#ModalArtista4">Ver Más</button>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Añade más items aquí -->
+                        <div class="carousel-item text-white">
+                            <div class="row text-center container">
+                                <div class="col-lg-3">
+                                    <img src="https://via.placeholder.com/150" class="circle-img" alt="...">
+                                    <h5>Heading 5</h5>
+                                    <p>Some representative placeholder content for the fifth column.</p>
+                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                        data-bs-target="#ModalArtista5">Ver Más</button>
+                                    <br>
+                                </div>
+                                <div class="col-lg-3">
+                                    <img src="https://via.placeholder.com/150" class="circle-img" alt="...">
+                                    <h5>Heading 6</h5>
+                                    <p>Some representative placeholder content for the sixth column.</p>
+                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                        data-bs-target="#ModalArtista6">Ver Más</button>
+                                    <br>
+                                </div>
+                                <div class="col-lg-3">
+                                    <img src="https://via.placeholder.com/150" class="circle-img" alt="...">
+                                    <h5>Heading 7</h5>
+                                    <p>Some representative placeholder content for the seventh column.</p>
+                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                        data-bs-target="#ModalArtista7">Ver Más</button>
+                                    <br>
+                                </div>
+                                <div class="col-lg-3">
+                                    <img src="https://via.placeholder.com/150" class="circle-img" alt="...">
+                                    <h5>Heading 8</h5>
+                                    <p>Some representative placeholder content for the eighth column.</p>
+                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                        data-bs-target="#ModalArtista8">Ver Más</button>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="text-body-secondary py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#">Back to top</a>
+            </p>
+            <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+            <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
+                    href="../getting-started/introduction/">getting started guide</a>.</p>
+        </div>
+    </footer>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
