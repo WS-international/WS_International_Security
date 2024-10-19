@@ -20,8 +20,56 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
 
 
-
     <style>
+        @font-face {
+            font-family: 'Titulos';
+            src: url("resources/fonts/Khand-Variable.ttf") format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Parrafos';
+            src: url("resources/fonts/Switzer-Variable.ttf") format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Logo';
+            src: url("resources/fonts/HudsonNYProSerif-SemiBldItl.ttf") format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .Logo {
+            font-family: 'Logo';
+        }
+
+        P {
+            font-family: 'Parrafos';
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Titulos';
+        }
+
+        .Links {
+            font-family: 'Parrafos';
+            font-size: small;
+        }
+
+
+        .abril-fatface-regular {
+            font-family: "Abril Fatface", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
         body,
         html {
             margin: 0;
@@ -294,13 +342,13 @@
         </video>
         <div class="overlay"></div>
         <div class="hero-content text-center">
-            <h1>Bienvenido a WS International Security</h1>
+            <h1 class="Titulos fw-bold">Bienvenido a WS International Security</h1>
             <p>Protección y comodidad en cada viaje.</p>
-            <br>
             <br>
             <a href="#welcome" class="scroll-down">
                 <i class="bi bi-chevron-down"></i>
             </a>
+            <br>
         </div>
     </section>
 
@@ -399,21 +447,21 @@
                     </div>
                     <div class="col-sm-2 offset-md-1 py-4 text-justify">
                         <h4>Contactanos</h4>
-                        <ul class="list-unstyled ">
-                            <li><a href="https://www.instagram.com/wssecurityinternational/" class="text-white"
+                        <ul class="list-unstyled Parrafos ">
+                            <li><a href="https://www.instagram.com/wssecurityinternational/" class="text-white Links"
                                     target="_blank" style="text-decoration: none;"><i class="bi bi-instagram"></i>
                                     Instagram</a></li>
                             <li><a href="https://youtube.com/@wsinternationalsecurity?si=e8E4pzt-hPPMFrVU"
-                                    class="text-white" target="_blank" style="text-decoration: none;"><i
+                                    class="text-white Links" target="_blank" style="text-decoration: none;"><i
                                         class="bi bi-youtube"></i> Youtube</a></li>
-                            <li><a href="" class="text-white" target="_blank" style="text-decoration: none;"><i
+                            <li><a href="" class="text-white Links" target="_blank" style="text-decoration: none;"><i
                                         class="bi bi-whatsapp"></i> WhatsApp </a>
                             </li>
-                            <li><a href="https://wa.link/fysy0o" class="text-white" target="_blank"
+                            <li><a href="https://wa.link/fysy0o" class="text-white Links" target="_blank"
                                     style="text-decoration: none;"><i class="bi bi-whatsapp"></i> WhatsApp 🌐</a>
                             </li>
                             <li><a href="https://www.facebook.com/profile.php?id=61567420910077&__tn__=-UC*F"
-                                    class="text-white" target="_blank" style="text-decoration: none;"><i
+                                    class="text-white Links" target="_blank" style="text-decoration: none;"><i
                                         class="bi bi-facebook"></i> Facebook</a></li>
                         </ul>
                     </div>
@@ -423,8 +471,8 @@
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a href="#" class="navbar-brand d-flex align-items-center">
-                    <img src="https://willysecurity.com/wp-content/uploads/thegem-logos/logo_d60aff3286ed004d83cddf64819fef76_1x.png"
-                        alt="willysecurity" style="height: 150px;  width: 150px;">
+                    <img src="resources/imgs/logo_Mesa de trabajo 1.png" alt="willysecurity"
+                        style="height: 8vw;  width: 8vw;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
                     aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -464,7 +512,7 @@
                         la tranqulidad ajustadas a tus necesidades.
                     </p>
                     <div class="text-center">
-                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
                             data-bs-target="#ModalVehicles">
                             Servicios disponibles
                         </button>
@@ -545,7 +593,7 @@
                         la seguridad que se ajustan a tus necesidades.
                     </p>
                     <div class="text-center">
-                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
                             data-bs-target="#ModalVehicles">
                             Vehiculos disponibles
                         </button>
@@ -623,13 +671,13 @@
                         <div class="carousel-item active">
                             <div class="row text-center">
                                 <div class="col-lg-3 py-3">
-                                    <img class="circle-img" src="" alt="Artista 1">
-                                    <h5>Nombre de Artista</h5>
-                                    <p>Breve referencia del Artista</p>
-                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
-                                        data-bs-target="#ModalArtista1">Ver Más</button>
+                                    <img class="circle-img" src="" alt="KarolG">
+                                    <h5>Karol G</h5>
+                                    <p></p>
+                                    <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
+                                        data-bs-target="#ModalKarolG">Ver Más</button>
                                     <br>
-                                    <div class="modal fade" id="ModalArtista1" tabindex="-1"
+                                    <div class="modal fade" id="ModalKarolG" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-centered">
                                             <div class="modal-content bg-dark text-white">
@@ -658,13 +706,13 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-3 py-3">
-                                    <img class="circle-img" src="" alt="Artista 2">
-                                    <h5>Nombre de Artista</h5>
-                                    <p>Breve referencia del Artista</p>
-                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
-                                        data-bs-target="#ModalArtista2">Ver Más</button>
+                                    <img class="circle-img" src="" alt="Blessd">
+                                    <h5>Blessd</h5>
+                                    <p></p>
+                                    <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
+                                        data-bs-target="#ModalBlessd">Ver Más</button>
                                     <br>
-                                    <div class="modal fade" id="ModalArtista2" tabindex="-1"
+                                    <div class="modal fade" id="ModalBlessd" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-centered">
                                             <div class="modal-content bg-dark text-white">
@@ -693,9 +741,9 @@
                                 </div>
                                 <div class="col-lg-3 py-3">
                                     <img class="circle-img" src="" alt="Artista 3">
-                                    <h5>Nombre de Artista</h5>
+                                    <h5>d</h5>
                                     <p>Breve referencia del Artista</p>
-                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
                                         data-bs-target="#ModalArtista3">Ver Más</button>
                                     <br>
                                     <div class="modal fade" id="ModalArtista3" tabindex="-1"
@@ -729,7 +777,7 @@
                                     <img class="circle-img" src="" alt="Artista 4">
                                     <h5>Nombre de Artista</h5>
                                     <p>Breve referencia del Artista</p>
-                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
                                         data-bs-target="#ModalArtista4">Ver Más</button>
                                     <br>
                                     <div class="modal fade" id="ModalArtista4" tabindex="-1"
@@ -767,7 +815,7 @@
                                     <img class="circle-img" src="" alt="Artista 5">
                                     <h5>Nombre de Artista</h5>
                                     <p>Breve referencia del Artista</p>
-                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
                                         data-bs-target="#ModalArtista5">Ver Más</button>
                                     <br>
                                     <div class="modal fade" id="ModalArtista5" tabindex="-1"
@@ -801,7 +849,7 @@
                                     <img class="circle-img" src="" alt="Artista 6">
                                     <h5>Nombre de Artista</h5>
                                     <p>Breve referencia del Artista</p>
-                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
                                         data-bs-target="#ModalArtista6">Ver Más</button>
                                     <br>
                                     <div class="modal fade" id="ModalArtista6" tabindex="-1"
@@ -835,7 +883,7 @@
                                     <img class="circle-img" src="" alt="Artista 7">
                                     <h5>Nombre de Artista</h5>
                                     <p>Breve referencia del Artista</p>
-                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
                                         data-bs-target="#ModalArtista7">Ver Más</button>
                                     <br>
                                     <div class="modal fade" id="ModalArtista7" tabindex="-1"
@@ -869,7 +917,7 @@
                                     <img class="circle-img" src="" alt="Artista 8">
                                     <h5>Nombre de Artista</h5>
                                     <p>Breve referencia del Artista</p>
-                                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
                                         data-bs-target="#ModalArtista8">Ver Más</button>
                                     <br>
                                     <div class="modal fade" id="ModalArtista8" tabindex="-1"
