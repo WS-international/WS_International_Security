@@ -16,12 +16,148 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
 
 
     <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #heroVideo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.76);
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .scroll-down {
+            margin-top: 20px;
+            color: white;
+            font-size: 24px;
+        }
+
+        .navbar {
+            z-index: 3;
+        }
+
+        #heroSection {
+            transition: opacity 0.5s ease-in-out;
+            /* Transición suave */
+        }
+
+        #heroSection.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .custom-section-light {
+            background-color: #212529 !important;
+            color: #f8f9fa !important;
+        }
+
+
+        .custom-section-dark {
+            background-color: #f8f9fa !important;
+            color: #212529 !important;
+            text-decoration: #212529 !important;
+
+            .btn-outline-light {
+                font-weight: 400;
+                color: #212529;
+                background-color: transparent;
+                border-width: 1px;
+                border-color: #212529;
+                padding: 0.375rem 0.75rem;
+                font-size: 1rem;
+                line-height: 1.5;
+                border-radius: 0.25rem;
+                transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+
+            .btn-outline-light:hover {
+                color: #fff;
+                background-color: #212529;
+                border-color: #1a1e21;
+            }
+
+            .btn-outline-light:focus,
+            .btn-outline-light.focus {
+                color: #fff;
+                background-color: #212529;
+                border-color: #1a1e21;
+                box-shadow: 0 0 0 0.25rem rgba(33, 37, 41, 0.5);
+            }
+
+            .btn-outline-light:active,
+            .btn-outline-light.active {
+                color: #fff;
+                background-color: #1a1e21;
+                border-color: #191c1f;
+            }
+
+            .btn-outline-light:disabled,
+            .btn-outline-light.disabled {
+                color: #212529;
+                background-color: transparent;
+                border-color: #212529;
+            }
+
+            .btn-outline-light:not(:disabled):not(.disabled):active,
+            .btn-outline-light:not(:disabled):not(.disabled).active,
+            .show>.btn-outline-light.dropdown-toggle {
+                color: #fff;
+                background-color: #1a1e21;
+                border-color: #191c1f;
+            }
+
+            .btn-outline-light:not(:disabled):not(.disabled):active:focus,
+            .btn-outline-light:not(:disabled):not(.disabled).active:focus {
+                box-shadow: 0 0 0 0.25rem rgba(33, 37, 41, 0.5);
+            }
+
+
+        }
+
         .btn-bd-primary {
-            background-color: black !important;
-            border-color: black !important;
+            background-color: #212529 !important;
+            border-color: #f8f9fa !important;
         }
 
 
@@ -151,6 +287,23 @@
 </head>
 
 <body>
+    <!-- Hero Section -->
+    <section class="hero" id="heroSection">
+        <video autoplay muted loop id="heroVideo">
+            <source src="https://willysecurity.com/wp-content/uploads/2023/10/LIVIANO.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="hero-content text-center">
+            <h1>Bienvenido a WS International Security</h1>
+            <p>Protección y comodidad en cada viaje.</p>
+            <br>
+            <br>
+            <a href="#welcome" class="scroll-down">
+                <i class="bi bi-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
     <!--Cambio de Color-->
     <section>
         <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -224,7 +377,7 @@
     </section>
 
     <!--Cabecera-->
-    <header data-bs-theme="dark">
+    <header id="welcome" data-bs-theme="dark">
         <div class="collapse text-bg-dark" id="navbarHeader">
             <div class="container">
                 <div class="row">
@@ -253,8 +406,15 @@
                             <li><a href="https://youtube.com/@wsinternationalsecurity?si=e8E4pzt-hPPMFrVU"
                                     class="text-white" target="_blank" style="text-decoration: none;"><i
                                         class="bi bi-youtube"></i> Youtube</a></li>
+                            <li><a href="" class="text-white" target="_blank" style="text-decoration: none;"><i
+                                        class="bi bi-whatsapp"></i> WhatsApp </a>
+                            </li>
                             <li><a href="https://wa.link/fysy0o" class="text-white" target="_blank"
-                                    style="text-decoration: none;"><i class="bi bi-whatsapp"></i> WhatsApp</a></li>
+                                    style="text-decoration: none;"><i class="bi bi-whatsapp"></i> WhatsApp 🌐</a>
+                            </li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61567420910077&__tn__=-UC*F"
+                                    class="text-white" target="_blank" style="text-decoration: none;"><i
+                                        class="bi bi-facebook"></i> Facebook</a></li>
                         </ul>
                     </div>
                 </div>
@@ -274,7 +434,7 @@
         </div>
     </header>
 
-    <!--Cuerpo-->>
+    <!--Cuerpo-->
     <main>
 
         <!-- Bienvenida -->
@@ -291,6 +451,87 @@
                 </div>
             </div>
         </section>
+
+        <!-- Servicios -->
+        <section class="container">
+            <div class="card text-bg-dark mb-2">
+                <img src="resources/imgs/banner .png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Nuestros Servicios</h5>
+                    <p class="card-text py-2 px-3 text-center">
+                        Contamos con gran variedad de servicios, brindando diferentes esquemas de seguridad que
+                        garantizan el confort y
+                        la tranqulidad ajustadas a tus necesidades.
+                    </p>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#ModalVehicles">
+                            Servicios disponibles
+                        </button>
+
+
+                        <div class="modal fade" id="ModalVehicles" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="carouselExampleInterval" class="carousel slide"
+                                            data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active" data-bs-interval="10000">
+                                                    <img src="https://assets.static-gm.com/Assets/cc0f2490-9e46-41eb-86f2-1f581d7a84b7/6bdc1f3b-82e6-46d7-9cec-fe9620e11ef2/v-1621401078/Desktop.webp"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="https://www.chevrolet.com.co/bypass/gmccontenthub/chevrolet/gm-co/colorizer_tahoe/images/colorizer/2022-tahoe-z71-colorizer-01-fi.png"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="https://www.cadillac.com/content/dam/cadillac/na/us/english/index/vehicles/2024/crossover-suvs/escalade/01-images/my24-escalade-mov-packages-onyx-v2.jpg?imwidth=960"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="https://assets.static-gm.com/Assets/cc0f2490-9e46-41eb-86f2-1f581d7a84b7/6bdc1f3b-82e6-46d7-9cec-fe9620e11ef2/v-1621401078/Desktop.webp"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="https://www.chevrolet.com.co/bypass/gmccontenthub/chevrolet/gm-co/colorizer_tahoe/images/colorizer/2022-tahoe-z71-colorizer-01-fi.png"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item" data-bs-interval="2000">
+                                                    <img src="https://www.cadillac.com/content/dam/cadillac/na/us/english/index/vehicles/2024/crossover-suvs/escalade/01-images/my24-escalade-mov-packages-onyx-v2.jpg?imwidth=960"
+                                                        class="d-block w-100" alt="...">
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button"
+                                                data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button"
+                                                data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br><br>
 
         <!-- Vehiculos -->
         <section class="container">
@@ -372,13 +613,13 @@
         </section>
 
         <br><br>
-        
+
         <!-- Artistas y Famosos -->
-        <section style="background-color: rgb(51, 50, 50);" class="py-4">
-            <h2 class="text-center text-white py-3 fw-bold fst-italic">Artistas y Famosos escoltados</h2>
+        <section class="py-4 custom-section">
+            <h2 class="text-center py-3 fw-bold fst-italic">Artistas y Famosos escoltados</h2>
             <div>
                 <div id="carouselExample" class="carousel slide container py-5" data-bs-ride="carousel">
-                    <div class="carousel-inner text-white">
+                    <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row text-center">
                                 <div class="col-lg-3 py-3">
@@ -391,7 +632,7 @@
                                     <div class="modal fade" id="ModalArtista1" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-centered">
-                                            <div class="modal-content bg-dark ">
+                                            <div class="modal-content bg-dark text-white">
                                                 <div class="modal-header">
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -426,7 +667,7 @@
                                     <div class="modal fade" id="ModalArtista2" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-centered">
-                                            <div class="modal-content bg-dark ">
+                                            <div class="modal-content bg-dark text-white">
                                                 <div class="modal-header">
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -460,7 +701,7 @@
                                     <div class="modal fade" id="ModalArtista3" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-centered">
-                                            <div class="modal-content bg-dark ">
+                                            <div class="modal-content bg-dark text-white">
                                                 <div class="modal-header">
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -494,7 +735,7 @@
                                     <div class="modal fade" id="ModalArtista4" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-centered">
-                                            <div class="modal-content bg-dark ">
+                                            <div class="modal-content bg-dark text-white">
                                                 <div class="modal-header">
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -520,7 +761,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item text-white">
+                        <div class="carousel-item">
                             <div class="row text-center">
                                 <div class="col-lg-3 py-3">
                                     <img class="circle-img" src="" alt="Artista 5">
@@ -532,7 +773,7 @@
                                     <div class="modal fade" id="ModalArtista5" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-centered">
-                                            <div class="modal-content bg-dark ">
+                                            <div class="modal-content bg-dark text-white">
                                                 <div class="modal-header">
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -566,7 +807,7 @@
                                     <div class="modal fade" id="ModalArtista6" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-centered">
-                                            <div class="modal-content bg-dark ">
+                                            <div class="modal-content bg-dark text-white">
                                                 <div class="modal-header">
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -600,7 +841,7 @@
                                     <div class="modal fade" id="ModalArtista7" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-centered">
-                                            <div class="modal-content bg-dark ">
+                                            <div class="modal-content bg-dark text-white">
                                                 <div class="modal-header">
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -634,7 +875,7 @@
                                     <div class="modal fade" id="ModalArtista8" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-centered">
-                                            <div class="modal-content bg-dark ">
+                                            <div class="modal-content bg-dark text-white">
                                                 <div class="modal-header">
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -679,21 +920,67 @@
 
     </main>
 
-    <footer class="text-body-secondary py-5">
-        <div class="container">
-            <p class="float-end mb-1">
-                <a href="#">Back to top</a>
-            </p>
-            <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-            <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
-                    href="../getting-started/introduction/">getting started guide</a>.</p>
-        </div>
-    </footer>
+    <div class="container py-5">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-body-secondary">&copy; 2024 Nocion Creativa</p>
+
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3">
+                    <a class="text-body-secondary" href="https://wa.link/fysy0o">
+                        <i class="bi bi-whatsapp" style="font-size: 24px;"></i>
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="text-body-secondary" href="https://www.instagram.com/wssecurityinternational/">
+                        <i class="bi bi-instagram" style="font-size: 24px;"></i>
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="text-body-secondary"
+                        href="https://www.facebook.com/profile.php?id=61567420910077&__tn__=-UC*F">
+                        <i class="bi bi-facebook" style="font-size: 24px;"></i>
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="text-body-secondary"
+                        href="https://youtube.com/@wsinternationalsecurity?si=e8E4pzt-hPPMFrVU">
+                        <i class="bi bi-youtube" style="font-size: 24px;"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </footer>
+    </div>
+
+    <!-- JavaScript para ocultar el hero video al subir el scroll -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const heroSection = document.getElementById('heroSection');
+            const scrollPosition = window.scrollY;
+
+            // Oculta el hero section al hacer scroll más allá de la altura de la ventana
+            if (scrollPosition > window.innerHeight) {
+                heroSection.style.opacity = '0';  // Desaparece gradualmente
+                heroSection.style.visibility = 'hidden';  // Hace que el elemento no sea visible
+            } else {
+                heroSection.style.opacity = '1';  // Restaura visibilidad
+                heroSection.style.visibility = 'visible';  // Vuelve visible
+            }
+        });
+    </script>
+
     <script>
         // Selecciona el carrusel
         var myCarousel = document.getElementById('carouselExample');
         var carouselInstance = new bootstrap.Carousel(myCarousel, {
-            interval: 120, // Puedes ajustar el intervalo según sea necesario
+            interval: 1200, // Ajustar el intervalo
             ride: 'carousel'
         });
 
@@ -711,7 +998,7 @@
     </script>
     <!-- Cambio de color -->
     <script>
-
+        // Activar el cambio de color de bootstrap
         (() => {
             'use strict'
 
@@ -754,6 +1041,38 @@
                 })
             })
         })()
+
+        //Jugar con el cambio de color en las secciones y revertirlo
+        document.addEventListener('DOMContentLoaded', function () {
+            const section = document.querySelector('.custom-section');
+
+            // Detecta el tema inicial
+            const theme = document.documentElement.getAttribute('data-bs-theme');
+            updateSectionTheme(theme);
+
+            // Escucha los cambios de tema
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    if (mutation.attributeName === 'data-bs-theme') {
+                        const newTheme = document.documentElement.getAttribute('data-bs-theme');
+                        updateSectionTheme(newTheme);
+                    }
+                });
+            });
+            observer.observe(document.documentElement, { attributes: true });
+
+            // Cambia la clase según el tema
+            function updateSectionTheme(theme) {
+                if (theme === 'dark') {
+                    section.classList.remove('custom-section-light');
+                    section.classList.add('custom-section-dark');
+                } else {
+                    section.classList.remove('custom-section-dark');
+                    section.classList.add('custom-section-light');
+                }
+            }
+        });
+
     </script>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
