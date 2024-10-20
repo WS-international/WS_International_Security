@@ -9,6 +9,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
     <title>WS Security International </title>
+    <link rel="stylesheet" href="src/styles/style.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -21,23 +22,56 @@
 
 
     <style>
+        .scroll-down {
+            position: relative;
+            animation: bounce 2s infinite;
+            /* Aplica la animación */
+            display: inline-block;
+            font-size: 1.5rem;
+            color: #000;
+            text-align: center;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+                /* El botón empieza en su posición original */
+            }
+
+            40% {
+                transform: translateY(-10px);
+                /* Se mueve ligeramente hacia arriba */
+            }
+
+            60% {
+                transform: translateY(-5px);
+                /* Rebota ligeramente hacia arriba */
+            }
+        }
+
+
         @font-face {
             font-family: 'Titulos';
-            src: url("resources/fonts/Khand-Variable.ttf") format('truetype');
+            src: url("src/fonts/Khand-Variable.ttf") format('truetype');
             font-weight: normal;
             font-style: normal;
         }
 
         @font-face {
             font-family: 'Parrafos';
-            src: url("resources/fonts/Switzer-Variable.ttf") format('truetype');
+            src: url("src/fonts/Switzer-Variable.ttf") format('truetype');
             font-weight: normal;
             font-style: normal;
         }
 
         @font-face {
             font-family: 'Logo';
-            src: url("resources/fonts/HudsonNYProSerif-SemiBldItl.ttf") format('truetype');
+            src: url("src/fonts/HudsonNYProSerif-SemiBldItl.ttf") format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -337,15 +371,15 @@
 <body>
     <!-- Hero Section -->
     <section class="hero" id="heroSection">
-        <video autoplay muted loop id="heroVideo">
-            <source src="https://willysecurity.com/wp-content/uploads/2023/10/LIVIANO.mp4" type="video/mp4">
-        </video>
+        <img id="heroVideo" src="src/imgs/banner .png" alt="Willy Security" loading="lazy">
         <div class="overlay"></div>
         <div class="hero-content text-center">
             <h1 class="Titulos fw-bold">Bienvenido a WS International Security</h1>
             <p>Protección y comodidad en cada viaje.</p>
             <br>
-            <a href="#welcome" class="scroll-down">
+            <!-- Botón que oculta la sección y hace scroll -->
+            <a href="#welcome" style="text-decoration: none;" class="scroll-down" id="hideHeroSection">
+                <p>Ver más</p>
                 <i class="bi bi-chevron-down"></i>
             </a>
             <br>
@@ -471,7 +505,7 @@
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a href="#" class="navbar-brand d-flex align-items-center">
-                    <img src="resources/imgs/logo_Mesa de trabajo 1.png" alt="willysecurity"
+                    <img src="src/imgs/logo_Mesa de trabajo 1.png" alt="willysecurity"
                         style="height: 8vw;  width: 8vw;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
@@ -503,7 +537,7 @@
         <!-- Servicios -->
         <section class="container">
             <div class="card text-bg-dark mb-2">
-                <img src="resources/imgs/banner .png" class="card-img-top" alt="...">
+                <img src="src/imgs/banner .png" class="card-img-top" alt="Servicios" loading="lazy">
                 <div class="card-body">
                     <h5 class="card-title text-center">Nuestros Servicios</h5>
                     <p class="card-text py-2 px-3 text-center">
@@ -532,7 +566,7 @@
                                             <div class="carousel-inner">
                                                 <div class="carousel-item active" data-bs-interval="10000">
                                                     <img src="https://assets.static-gm.com/Assets/cc0f2490-9e46-41eb-86f2-1f581d7a84b7/6bdc1f3b-82e6-46d7-9cec-fe9620e11ef2/v-1621401078/Desktop.webp"
-                                                        class="d-block w-100" alt="...">
+                                                        class="d-block w-100" alt="..." loading="lazy">
                                                 </div>
                                                 <div class="carousel-item" data-bs-interval="2000">
                                                     <img src="https://www.chevrolet.com.co/bypass/gmccontenthub/chevrolet/gm-co/colorizer_tahoe/images/colorizer/2022-tahoe-z71-colorizer-01-fi.png"
@@ -540,19 +574,19 @@
                                                 </div>
                                                 <div class="carousel-item" data-bs-interval="2000">
                                                     <img src="https://www.cadillac.com/content/dam/cadillac/na/us/english/index/vehicles/2024/crossover-suvs/escalade/01-images/my24-escalade-mov-packages-onyx-v2.jpg?imwidth=960"
-                                                        class="d-block w-100" alt="...">
+                                                        class="d-block w-100" alt="..." loading="lazy">
                                                 </div>
                                                 <div class="carousel-item" data-bs-interval="2000">
                                                     <img src="https://assets.static-gm.com/Assets/cc0f2490-9e46-41eb-86f2-1f581d7a84b7/6bdc1f3b-82e6-46d7-9cec-fe9620e11ef2/v-1621401078/Desktop.webp"
-                                                        class="d-block w-100" alt="...">
+                                                        class="d-block w-100" alt="..." loading="lazy">
                                                 </div>
                                                 <div class="carousel-item" data-bs-interval="2000">
                                                     <img src="https://www.chevrolet.com.co/bypass/gmccontenthub/chevrolet/gm-co/colorizer_tahoe/images/colorizer/2022-tahoe-z71-colorizer-01-fi.png"
-                                                        class="d-block w-100" alt="...">
+                                                        class="d-block w-100" alt="..." loading="lazy">
                                                 </div>
                                                 <div class="carousel-item" data-bs-interval="2000">
                                                     <img src="https://www.cadillac.com/content/dam/cadillac/na/us/english/index/vehicles/2024/crossover-suvs/escalade/01-images/my24-escalade-mov-packages-onyx-v2.jpg?imwidth=960"
-                                                        class="d-block w-100" alt="...">
+                                                        class="d-block w-100" alt="..." loading="lazy">
                                                 </div>
                                             </div>
                                             <button class="carousel-control-prev" type="button"
@@ -585,7 +619,7 @@
         <section class="container">
             <div class="card text-bg-dark mb-2">
                 <img src="https://willysecurity.com/wp-content/uploads/2023/05/cars-WillySecurity.png"
-                    class="card-img-top" alt="...">
+                    class="card-img-top" alt="vehiculos" loading="lazy">
                 <div class="card-body">
                     <h5 class="card-title text-center">Nuestros Vehiculos</h5>
                     <p class="card-text py-2 px-3 text-center">
@@ -673,7 +707,7 @@
                                 <div class="col-lg-3 py-3">
                                     <img class="circle-img" src="" alt="KarolG">
                                     <h5>Karol G</h5>
-                                    <p></p>
+                                    <p>Breve referencia del Artista</p>
                                     <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
                                         data-bs-target="#ModalKarolG">Ver Más</button>
                                     <br>
@@ -708,7 +742,7 @@
                                 <div class="col-lg-3 py-3">
                                     <img class="circle-img" src="" alt="Blessd">
                                     <h5>Blessd</h5>
-                                    <p></p>
+                                    <p>Breve referencia del Artista</p>
                                     <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
                                         data-bs-target="#ModalBlessd">Ver Más</button>
                                     <br>
@@ -741,7 +775,7 @@
                                 </div>
                                 <div class="col-lg-3 py-3">
                                     <img class="circle-img" src="" alt="Artista 3">
-                                    <h5>d</h5>
+                                    <h5>Artista 3</h5>
                                     <p>Breve referencia del Artista</p>
                                     <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
                                         data-bs-target="#ModalArtista3">Ver Más</button>
@@ -968,160 +1002,43 @@
 
     </main>
 
-    <div class="container py-5">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <p class="col-md-4 mb-0 text-body-secondary">&copy; 2024 Nocion Creativa</p>
 
-            <a href="/"
-                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <svg class="bi me-2" width="40" height="32">
-                    <use xlink:href="#bootstrap" />
-                </svg>
-            </a>
+    <footer class="container py-5 d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-body-secondary">&copy; 2024 Nocion Creativa</p>
 
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3">
-                    <a class="text-body-secondary" href="https://wa.link/fysy0o">
-                        <i class="bi bi-whatsapp" style="font-size: 24px;"></i>
-                    </a>
-                </li>
-                <li class="ms-3">
-                    <a class="text-body-secondary" href="https://www.instagram.com/wssecurityinternational/">
-                        <i class="bi bi-instagram" style="font-size: 24px;"></i>
-                    </a>
-                </li>
-                <li class="ms-3">
-                    <a class="text-body-secondary"
-                        href="https://www.facebook.com/profile.php?id=61567420910077&__tn__=-UC*F">
-                        <i class="bi bi-facebook" style="font-size: 24px;"></i>
-                    </a>
-                </li>
-                <li class="ms-3">
-                    <a class="text-body-secondary"
-                        href="https://youtube.com/@wsinternationalsecurity?si=e8E4pzt-hPPMFrVU">
-                        <i class="bi bi-youtube" style="font-size: 24px;"></i>
-                    </a>
-                </li>
-            </ul>
+        <a href="https://www.instagram.com/nocioncreativa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img src="src/imgs/pixelcut-export.png" alt="Nocion Creativa" width="80" height="80">
+        </a>
 
-        </footer>
-    </div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+                <a class="text-body-secondary" href="https://wa.link/fysy0o">
+                    <i class="bi bi-whatsapp" style="font-size: 24px;"></i>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-body-secondary" href="https://www.instagram.com/wssecurityinternational/">
+                    <i class="bi bi-instagram" style="font-size: 24px;"></i>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-body-secondary"
+                    href="https://www.facebook.com/profile.php?id=61567420910077&__tn__=-UC*F">
+                    <i class="bi bi-facebook" style="font-size: 24px;"></i>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-body-secondary" href="https://youtube.com/@wsinternationalsecurity?si=e8E4pzt-hPPMFrVU">
+                    <i class="bi bi-youtube" style="font-size: 24px;"></i>
+                </a>
+            </li>
+        </ul>
 
-    <!-- JavaScript para ocultar el hero video al subir el scroll -->
-    <script>
-        window.addEventListener('scroll', function () {
-            const heroSection = document.getElementById('heroSection');
-            const scrollPosition = window.scrollY;
+    </footer>
 
-            // Oculta el hero section al hacer scroll más allá de la altura de la ventana
-            if (scrollPosition > window.innerHeight) {
-                heroSection.style.opacity = '0';  // Desaparece gradualmente
-                heroSection.style.visibility = 'hidden';  // Hace que el elemento no sea visible
-            } else {
-                heroSection.style.opacity = '1';  // Restaura visibilidad
-                heroSection.style.visibility = 'visible';  // Vuelve visible
-            }
-        });
-    </script>
-
-    <script>
-        // Selecciona el carrusel
-        var myCarousel = document.getElementById('carouselExample');
-        var carouselInstance = new bootstrap.Carousel(myCarousel, {
-            interval: 1200, // Ajustar el intervalo
-            ride: 'carousel'
-        });
-
-        // Función para pausar el carrusel cuando se abre cualquier modal
-        var modals = document.querySelectorAll('.modal');
-        modals.forEach(function (modal) {
-            modal.addEventListener('show.bs.modal', function () {
-                carouselInstance.pause(); // Pausa el carrusel
-            });
-
-            modal.addEventListener('hidden.bs.modal', function () {
-                carouselInstance.cycle(); // Reanuda el carrusel cuando se cierra el modal
-            });
-        });
-    </script>
-    <!-- Cambio de color -->
-    <script>
-        // Activar el cambio de color de bootstrap
-        (() => {
-            'use strict'
-
-            const storedTheme = localStorage.getItem('theme')
-
-            const getPreferredTheme = () => {
-                if (storedTheme) {
-                    return storedTheme
-                }
-                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-            }
-
-            const setTheme = (theme) => {
-                if (theme === 'auto') {
-                    document.documentElement.setAttribute('data-bs-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-                } else {
-                    document.documentElement.setAttribute('data-bs-theme', theme)
-                }
-                localStorage.setItem('theme', theme)
-            }
-
-            setTheme(getPreferredTheme())
-
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-                if (storedTheme !== 'light' && storedTheme !== 'dark') {
-                    setTheme(getPreferredTheme())
-                }
-            })
-
-            document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
-                toggle.addEventListener('click', () => {
-                    const theme = toggle.getAttribute('data-bs-theme-value')
-                    setTheme(theme)
-                    document.querySelectorAll('[data-bs-theme-value]').forEach(t => {
-                        t.classList.remove('active')
-                        t.setAttribute('aria-pressed', 'false')
-                    })
-                    toggle.classList.add('active')
-                    toggle.setAttribute('aria-pressed', 'true')
-                })
-            })
-        })()
-
-        //Jugar con el cambio de color en las secciones y revertirlo
-        document.addEventListener('DOMContentLoaded', function () {
-            const section = document.querySelector('.custom-section');
-
-            // Detecta el tema inicial
-            const theme = document.documentElement.getAttribute('data-bs-theme');
-            updateSectionTheme(theme);
-
-            // Escucha los cambios de tema
-            const observer = new MutationObserver(function (mutations) {
-                mutations.forEach(function (mutation) {
-                    if (mutation.attributeName === 'data-bs-theme') {
-                        const newTheme = document.documentElement.getAttribute('data-bs-theme');
-                        updateSectionTheme(newTheme);
-                    }
-                });
-            });
-            observer.observe(document.documentElement, { attributes: true });
-
-            // Cambia la clase según el tema
-            function updateSectionTheme(theme) {
-                if (theme === 'dark') {
-                    section.classList.remove('custom-section-light');
-                    section.classList.add('custom-section-dark');
-                } else {
-                    section.classList.remove('custom-section-dark');
-                    section.classList.add('custom-section-light');
-                }
-            }
-        });
-
-    </script>
+    <script src="src/js/main.js" defer></script>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
