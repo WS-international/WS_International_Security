@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html lang="es" data-bs-theme="auto">
+
 <head>
     <script src="../assets/js/color-modes.js"></script>
     <meta charset="utf-8">
@@ -24,7 +24,6 @@
         .scroll-down {
             position: relative;
             animation: bounce 2s infinite;
-            /* Aplica la animación */
             display: inline-block;
             font-size: 1.5rem;
             color: #000;
@@ -39,17 +38,14 @@
             80%,
             100% {
                 transform: translateY(0);
-                /* El botón empieza en su posición original */
             }
 
             40% {
                 transform: translateY(-10px);
-                /* Se mueve ligeramente hacia arriba */
             }
 
             60% {
                 transform: translateY(-5px);
-                /* Rebota ligeramente hacia arriba */
             }
         }
 
@@ -81,14 +77,20 @@
 
         P {
             font-family: 'Parrafos';
+            font-size: 0.9rem;
         }
 
         h1,
-        h2,
+        h2 {
+            font-family: 'Titulos';
+            font-size: 2rem;
+        }
+
         h3,
         h4,
         h5 {
             font-family: 'Titulos';
+            font-size: 1.5rem;
         }
 
         .Links {
@@ -155,7 +157,7 @@
         }
 
         .navbar {
-            z-index: 3;
+            z-index: 10;
         }
 
         #heroSection {
@@ -368,9 +370,10 @@
 </head>
 
 <body>
+
     <!-- Hero Section -->
     <section class="hero" id="heroSection">
-        <img id="heroVideo" src="src/imgs/banner .png" alt="Willy Security" loading="lazy">
+        <img id="heroVideo" class="img-fluid" src="src/imgs/banner .png" alt="Willy Security">
         <div class="overlay"></div>
         <div class="hero-content text-center">
             <h1 class="Titulos fw-bold">Bienvenido a WS International Security</h1>
@@ -407,7 +410,7 @@
             </symbol>
         </svg>
 
-        <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <div class="dropdown position-fixed bottom-0 mb-3 ms-3 bd-mode-toggle">
             <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme"
                 type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
                 <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
@@ -505,7 +508,7 @@
             <div class="container">
                 <a href="#" class="navbar-brand d-flex align-items-center">
                     <img src="src/imgs/logo_Mesa de trabajo 1.png" alt="willysecurity"
-                        style="height: 8vw;  width: 8vw;">
+                        style="height: 8rem;  width: 8rem;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
                     aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -515,6 +518,7 @@
         </div>
     </header>
 
+
     <!--Cuerpo-->
     <main>
 
@@ -523,7 +527,7 @@
             <div class="row py-lg-5">
                 <div class="col-lg-16 col-md-8 mx-auto">
                     <h1 class="fw-dark text-center">WS International Security</h1>
-                    <p class="lead text-body-secondary text-center">
+                    <p class="text-center">
                         ¡Bienvenido a WS Security International! Estamos aquí para ofrecerte seguridad y transporte
                         elite, garantizando tu protección y comodidad en cada viaje. Tu seguridad es nuestra misión.
                         <br>
@@ -698,8 +702,8 @@
         <!-- Artistas y Famosos -->
         <section class="py-4 custom-section">
             <h2 class="text-center py-3 fw-bold fst-italic">Artistas y Famosos escoltados</h2>
-            <div>
-                <div id="carouselExample" class="carousel slide container py-5" data-bs-ride="carousel">
+            <div class="container">
+                <div id="carouselExample" class="carousel slide container py-5">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row text-center">
@@ -719,16 +723,11 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-
                                                     <img src="https://willysecurity.com/wp-content/uploads/2023/05/50946080_2031133523857231_1913969381377835008_n.jpg"
                                                         class="" style="width: 40vw;" alt="ServicioFamoso1">
-                                                    <br>
-                                                    <br>
+                                                    <br><br>
                                                     <hr>
-                                                    <p>
-                                                        Descripcion del servicio prestado
-                                                    </p>
-
+                                                    <p>Descripcion del servicio prestado</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -754,15 +753,10 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-
                                                     <img src="" class="" style="width: 40vw;" alt="ServicioFamoso2">
-                                                    <br>
-                                                    <br>
+                                                    <br><br>
                                                     <hr>
-                                                    <p>
-                                                        Descripcion del servicio prestado
-                                                    </p>
-
+                                                    <p>Descripcion del servicio prestado</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -788,7 +782,6 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-
                                                     <img src="" class="" style="width: 40vw;" alt="ServicioFamoso3">
                                                     <br>
                                                     <br>
@@ -796,7 +789,6 @@
                                                     <p>
                                                         Descripcion del servicio prestado
                                                     </p>
-
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -822,7 +814,6 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-
                                                     <img src="" class="" style="width: 40vw;" alt="ServicioFamoso4">
                                                     <br>
                                                     <br>
@@ -830,7 +821,6 @@
                                                     <p>
                                                         Descripcion del servicio prestado
                                                     </p>
-
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -860,7 +850,6 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-
                                                     <img src="" class="" style="width: 40vw;" alt="ServicioFamoso5">
                                                     <br>
                                                     <br>
@@ -868,7 +857,6 @@
                                                     <p>
                                                         Descripcion del servicio prestado
                                                     </p>
-
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -894,7 +882,6 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-
                                                     <img src="" class="" style="width: 40vw;" alt="ServicioFamoso6">
                                                     <br>
                                                     <br>
@@ -902,7 +889,6 @@
                                                     <p>
                                                         Descripcion del servicio prestado
                                                     </p>
-
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -928,7 +914,6 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-
                                                     <img src="" class="" style="width: 40vw;" alt="ServicioFamoso7">
                                                     <br>
                                                     <br>
@@ -936,7 +921,6 @@
                                                     <p>
                                                         Descripcion del servicio prestado
                                                     </p>
-
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -962,7 +946,6 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-
                                                     <img src="" class="" style="width: 40vw;" alt="ServicioFamoso8">
                                                     <br>
                                                     <br>
@@ -970,7 +953,6 @@
                                                     <p>
                                                         Descripcion del servicio prestado
                                                     </p>
-
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -983,7 +965,6 @@
                             </div>
                         </div>
                     </div>
-
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -996,22 +977,24 @@
                     </button>
                 </div>
             </div>
-
         </section>
+
+
 
     </main>
 
 
-    <footer class="container py-5 d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p class="col-md-4 mb-0 text-body-secondary">&copy; 2024 Nocion Creativa</p>
+    <footer
+        class="container py-5 d-flex flex-column flex-md-row flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-12 col-md-4 mb-2 mb-md-0 text-center text-md-start text-body-secondary">&copy; 2024 Nocion
+            Creativa</p>
 
         <a href="https://www.instagram.com/nocioncreativa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            target="_blank"
-            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            target="_blank" class="col-12 col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0">
             <img src="src/imgs/pixelcut-export.png" alt="Nocion Creativa" width="80" height="80">
         </a>
 
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <ul class="nav col-12 col-md-4 justify-content-center justify-content-md-end list-unstyled d-flex">
             <li class="ms-3">
                 <a class="text-body-secondary" href="https://wa.link/fysy0o">
                     <i class="bi bi-whatsapp" style="font-size: 24px;"></i>
@@ -1034,7 +1017,6 @@
                 </a>
             </li>
         </ul>
-
     </footer>
 
     <script src="src/js/main.js" defer></script>

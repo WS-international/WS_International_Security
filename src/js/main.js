@@ -1,6 +1,6 @@
 //Funcionalidad de ocultamiento de hero y inibidor de scroll
 
-window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("DOMContentLoaded", function() {
     const heroSection = document.getElementById("heroSection");
     const hideButton = document.getElementById("hideHeroSection");
 
@@ -70,25 +70,6 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-// Selecciona el carrusel
-var myCarousel = document.getElementById('carouselExample');
-var carouselInstance = new bootstrap.Carousel(myCarousel, {
-    interval: 1200, // Ajustar el intervalo
-    ride: 'carousel'
-});
-
-// Función para pausar el carrusel cuando se abre cualquier modal
-var modals = document.querySelectorAll('.modal');
-modals.forEach(function (modal) {
-    modal.addEventListener('show.bs.modal', function () {
-        carouselInstance.pause(); // Pausa el carrusel
-    });
-
-    modal.addEventListener('hidden.bs.modal', function () {
-        carouselInstance.cycle(); // Reanuda el carrusel cuando se cierra el modal
-    });
-});
 
 //Cambio de color 
 
