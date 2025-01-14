@@ -1,6 +1,6 @@
 //Funcionalidad de ocultamiento de hero y inibidor de scroll
 
-window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("DOMContentLoaded", function () {
     const heroSection = document.getElementById("heroSection");
     const hideButton = document.getElementById("hideHeroSection");
 
@@ -147,5 +147,17 @@ document.addEventListener('DOMContentLoaded', function () {
             section.classList.add('custom-section-light');
         }
     }
+});
+
+// Obtener todos los elementos de la galería
+const images = document.querySelectorAll('.zoom-effect');
+
+// Añadir el evento de clic a cada imagen para abrir en el lightbox
+images.forEach(image => {
+    image.addEventListener('click', function () {
+        const imageSrc = this.getAttribute('data-bs-src');
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = imageSrc;
+    });
 });
 

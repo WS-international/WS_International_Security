@@ -21,6 +21,53 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
 
     <style>
+        /* Estilo de la grilla */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Estilo para las imágenes con zoom */
+        .zoom-effect {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .zoom-effect:hover {
+            transform: scale(1.1);
+            /* Zoom al pasar el ratón */
+        }
+
+        .image-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Estilo para el modal */
+        .modal-content {
+            background: #000;
+        }
+
+        .modal-body {
+            padding: 0;
+        }
+
+        .modal-footer {
+            justify-content: center;
+        }
+
+        /* Responsive: Grilla ajustable */
+        @media (max-width: 768px) {
+            .col-md-4 {
+                flex: 1 1 100%;
+                /* En pantallas pequeñas, las imágenes se mostrarán una debajo de la otra */
+            }
+        }
+
+
+
+
         .scroll-down {
             position: relative;
             animation: bounce 2s infinite;
@@ -387,6 +434,7 @@
             <br>
         </div>
     </section>
+    
     <!--Cambio de Color-->
     <section>
         <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -458,6 +506,7 @@
         </div>
 
     </section>
+
     <!--Cabecera-->
     <header id="welcome" data-bs-theme="dark">
         <div class="collapse text-bg-dark" id="navbarHeader">
@@ -514,6 +563,7 @@
             </div>
         </div>
     </header>
+
     <!--Cuerpo-->
     <main>
         <!-- Bienvenida -->
@@ -530,8 +580,9 @@
                 </div>
             </div>
         </section>
+
         <!-- Servicios -->
-        <section class="container">
+        <section class="container py-5">
             <div class="card text-bg-dark mb-2">
                 <img src="src/imgs/banner .webp" class="card-img-top" alt="Servicios" loading="lazy">
                 <div class="card-body">
@@ -542,65 +593,227 @@
                         la tranqulidad ajustadas a tus necesidades.
                     </p>
                     <div class="text-center">
-                        <button type="button" class="btn btn-outline-light Links" data-bs-toggle="modal"
-                            data-bs-target="#ModalVehicles">
+                        <button type="button" class="btn btn-outline-light Links" data-bs-toggle="collapse"
+                            href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                             Servicios disponibles
                         </button>
+                    </div>
+                </div>
+            </div>
 
-
-                        <div class="modal fade" id="ModalVehicles" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-xl modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
+            <div class="collapse" id="collapseExample">
+                <!-- Carrusel de imágenes -->
+                <div id="carouselServices" class="carousel slide mt-5" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Fila 1 de imágenes -->
+                        <div class="carousel-item active">
+                            <div class="row d-flex justify-content-center">
+                                <!-- Imagen 1 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 1.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 1" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 1.webp">
                                     </div>
-                                    <div class="modal-body">
-                                        <div id="carouselExampleInterval" class="carousel slide"
-                                            data-bs-ride="carousel">
-                                            <div class="carousel-inner">
-                                                <div class="carousel-item active" data-bs-interval="10000">
-                                                    <img src="src/imgs/Info Vehiculos/Info Vehiculo-Escalade.webp"
-                                                        class="d-block w-100" alt="..." loading="lazy">
-                                                </div>
-                                                <div class="carousel-item" data-bs-interval="3000">
-                                                    <img src="src/imgs/Info Vehiculos/Info Vehiculo-Silverdo.webp"
-                                                        class="d-block w-100" alt="...">
-                                                </div>
-                                                <div class="carousel-item" data-bs-interval="3000">
-                                                    <img src="src/imgs/Info Vehiculos/Info Vehiculo-Toyota Prado TXL.webp"
-                                                        class="d-block w-100" alt="..." loading="lazy">
-                                                </div>
-                                                <div class="carousel-item" data-bs-interval="3000">
-                                                    <img src="src/imgs/Info Vehiculos/Info Vehiculo_Tahoe.webp"
-                                                        class="d-block w-100" alt="..." loading="lazy">
-                                                </div>
-                                            </div>
-                                            <button class="carousel-control-prev" type="button"
-                                                data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Previous</span>
-                                            </button>
-                                            <button class="carousel-control-next" type="button"
-                                                data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Next</span>
-                                            </button>
-                                        </div>
+                                </div>
+                                <!-- Imagen 2 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 2.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 2" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 2.webp">
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                                <!-- Imagen 3 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 3.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 3" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 3.webp">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fila 2 de imágenes -->
+                        <div class="carousel-item">
+                            <div class="row d-flex justify-content-center">
+                                <!-- Imagen 4 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 4.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 4" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 4.webp">
+                                    </div>
+                                </div>
+                                <!-- Imagen 5 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 5.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 5" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 5.webp">
+                                    </div>
+                                </div>
+                                <!-- Imagen 6 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 6.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 6" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 6.webp">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fila 3 de imágenes -->
+                        <div class="carousel-item">
+                            <div class="row d-flex justify-content-center">
+                                <!-- Imagen 7 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 7.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 7" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 7.webp">
+                                    </div>
+                                </div>
+                                <!-- Imagen 8 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 8.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 8" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 8.webp">
+                                    </div>
+                                </div>
+                                <!-- Imagen 9 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 9.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 9" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 9.webp">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fila 4 de imágenes -->
+                        <div class="carousel-item">
+                            <div class="row d-flex justify-content-center">
+                                <!-- Imagen 10 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 10.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 10" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 10.webp">
+                                    </div>
+                                </div>
+                                <!-- Imagen 11 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 11.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 11" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 11.webp">
+                                    </div>
+                                </div>
+                                <!-- Imagen 12 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 12.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 12" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 12.webp">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fila 5 de imágenes -->
+                        <div class="carousel-item">
+                            <div class="row d-flex justify-content-center">
+                                <!-- Imagen 13 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 13.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 13" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 13.webp">
+                                    </div>
+                                </div>
+                                <!-- Imagen 14 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 14.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 14" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 14.webp">
+                                    </div>
+                                </div>
+                                <!-- Imagen 15 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 15.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 15" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 15.webp">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fila 6 de imágenes -->
+                        <div class="carousel-item">
+                            <div class="row d-flex justify-content-center">
+                                <!-- Imagen 16 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 16.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 16" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 16.webp">
+                                    </div>
+                                </div>
+                                <!-- Imagen 17 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 17.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 17" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 17.webp">
+                                    </div>
+                                </div>
+                                <!-- Imagen 18 -->
+                                <div class="col-md-4 col-sm-4 mb-4 d-flex justify-content-center">
+                                    <div class="image-container">
+                                        <img src="src/imgs/Servicios/Servicio 18.webp" class="img-fluid zoom-effect"
+                                            alt="Servicio 18" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                            data-bs-src="src/imgs/Servicios/Servicio 18.webp">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Controles de navegación -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselServices"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselServices"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+
+                <!-- Modal para ver la imagen en grande (Lightbox) -->
+                <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img src="" id="modalImage" class="img-fluid" alt="Imagen en detalle">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </section>
+
         <br><br>
+
         <!-- Vehiculos -->
         <section class="container">
             <div class="card text-bg-dark mb-2">
@@ -670,7 +883,9 @@
                 </div>
             </div>
         </section>
+
         <br><br>
+
         <!-- Artistas y Famosos -->
         <section class="py-4 custom-section">
             <h2 class="text-center py-3 fw-bold fst-italic">HEMOS TRABAJADO PARA...</h2>
@@ -894,7 +1109,9 @@
                 </div>
             </div>
         </section>
+
     </main>
+
     <footer
         class="container py-5 d-flex flex-column flex-md-row flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <p class="col-12 col-md-4 mb-2 mb-md-0 text-center text-md-start text-body-secondary">&copy; 2024 Nocion
